@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Diplom:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Diplom_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Diplom/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Diplom" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.4" />
+          <element id="library" level="project" name="javax.servlet.jsp.jstl-api-1.2.1" />
+          <element id="library" level="project" name="jtds-1.3.1" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.33" />
+          <element id="library" level="project" name="ojdbc6" />
+          <element id="library" level="project" name="sqljdbc4" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
