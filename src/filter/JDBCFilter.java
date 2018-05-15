@@ -36,7 +36,7 @@ public class JDBCFilter implements Filter {
 
     // Проверить является ли Servlet цель текущего request?
     private boolean needJDBC(HttpServletRequest request) {
-        System.out.println("JDBC Filter");
+       // System.out.println("JDBC Filter");
         //
         // Servlet Url-pattern: /spath/*
         //

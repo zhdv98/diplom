@@ -23,7 +23,7 @@ public class DBUtils {
 
 
     public static List<Rozklad> queryRozklad(Connection conn) throws SQLException {
-        String sql = "Select a.Kod, a.DayOfWeek, a.Grupa, a.Vikladach, a.Predmet, a.Auditoria, a.Week from Product a ";
+        String sql = "Select a.Kod, a.DayOfWeek, a.Grupa, a.Vikladach, a.Predmet, a.Auditoria, a.Week from Rozklad a ";
 
         PreparedStatement pstm = conn.prepareStatement(sql);
 
@@ -52,7 +52,7 @@ public class DBUtils {
         return list;
     }
 
-    public static Product findProduct(Connection conn, String code) throws SQLException {
+   /* public static Product findProduct(Connection conn, String code) throws SQLException {
         String sql = "Select a.Code, a.Name, a.Price from Product a where a.Code=?";
 
         PreparedStatement pstm = conn.prepareStatement(sql);
@@ -100,6 +100,6 @@ public class DBUtils {
         pstm.setString(1, code);
 
         pstm.executeUpdate();
-    }
+    }*/
 
 }
