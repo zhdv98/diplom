@@ -23,7 +23,7 @@ public class DBUtils {
 
 
     public static List<Rozklad> queryRozklad(Connection conn) throws SQLException {
-        String sql = "Select a.Kod, a.DayOfWeek, a.Grupa, a.Vikladach, a.Predmet, a.Auditoria, a.Week from Rozklad a ";
+        String sql = "Select * from Rozklad  ";
 
         PreparedStatement pstm = conn.prepareStatement(sql);
 
