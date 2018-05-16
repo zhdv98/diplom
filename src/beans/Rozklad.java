@@ -3,8 +3,9 @@ package beans;
 public class Rozklad {
     private int Kod;
     private String DayOfWeek;
+    private int Para;
     private int Grupa;
-    private String Vikladach;
+    private int Vikladach;
     private int Predmet;
     private int Auditoria;
     private int Week;
@@ -33,11 +34,11 @@ public class Rozklad {
         Grupa = grupa;
     }
 
-    public String getVikladach() {
+    public int getVikladach() {
         return Vikladach;
     }
 
-    public void setVikladach(String vikladach) {
+    public void setVikladach(int vikladach) {
         Vikladach = vikladach;
     }
 
@@ -63,5 +64,13 @@ public class Rozklad {
 
     public void setWeek(int week) {
         Week = week;
+    }
+
+    public int getPara() {
+        return Para;
+    }
+
+    public void setPara(int para) {
+        Para = para;
     }
 }

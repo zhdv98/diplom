@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.DayOfWeek;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,32 +23,39 @@ public class DBUtils {
 
 
     public static List<Rozklad> queryRozklad(Connection conn) throws SQLException {
-        String sql = "Select * from Rozklad  ";
+        String sql = "select r.DayOfWeek, r.Para, g.Nazva, v.PIB, p.Nazva, a.Nazva , r.Week from Rozklad r, Groups g, Vikladachi v, Predmeti p, Auditorii a WHERE r.Grupa=g.Kod and r.Vikladach=v.Number and r.Predmet=p.Kod and r.Auditoria=a.Kod ";
 
         PreparedStatement pstm = conn.prepareStatement(sql);
 
         ResultSet rs = pstm.executeQuery();
         List<Rozklad> list = new ArrayList<Rozklad>();
         while (rs.next()) {
-            int Kod = rs.getInt("Kod");
+            //int Kod = rs.getInt("Kod");
             String DayOfWeek = rs.getString("DayOfWeek");
-            int Grupa = rs.getInt("Grupa");
-            String Vikladach = rs.getString("Vikladach");
-            int Predmet = rs.getInt("Predmet");
-            int Auditoria = rs.getInt("Auditoria");
+            int Para = rs.getInt("Para");
+            int Grupa = rs.getInt("g.Nazva");
+            int Vikladach = rs.getInt("v.PIB");
+            int Predmet = rs.getInt("p.Nazva");
+            int Auditoria = rs.getInt("a.Nazva");
             int Week = rs.getInt("Week");
 
             Rozklad rozklad = new Rozklad();
-            rozklad.setKod(Kod);
+            //rozklad.setKod(Kod);
             rozklad.setDayOfWeek(DayOfWeek);
+            rozklad.setPara(Para);
             rozklad.setGrupa(Grupa);
             rozklad.setVikladach(Vikladach);
             rozklad.setPredmet(Predmet);
             rozklad.setAuditoria(Auditoria);
             rozklad.setWeek(Week);
 
+            list.equals(rozklad);
             list.add(rozklad);
+            System.out.println(list);
+
+
         }
+        pstm.close();
         return list;
     }
 

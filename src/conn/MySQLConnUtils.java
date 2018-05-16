@@ -11,7 +11,7 @@ public class MySQLConnUtils {
         // Примечание: Изменить параметры соединения соответствующе.
 
 
-         String hostName = "localhost";
+        String hostName = "localhost";
         String dbName = "diplom";
         String userName = "admin";
         String password = "KzB2Tq5ucEkuW5pF";
