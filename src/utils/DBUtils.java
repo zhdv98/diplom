@@ -23,7 +23,7 @@ public class DBUtils {
 
 
     public static List<Rozklad> queryRozklad(Connection conn) throws SQLException {
-        String sql = "select r.DayOfWeek, r.Para, g.Nazva, v.PIB, p.Nazva, a.Nazva , r.Week from Rozklad r, Groups g, Vikladachi v, Predmeti p, Auditorii a WHERE r.Grupa=g.Kod and r.Vikladach=v.Number and r.Predmet=p.Kod and r.Auditoria=a.Kod ";
+        String sql = "select r.DayOfWeek, r.Para, g.Nazva, v.PIB, p.Nazva, r.Auditoria , r.Week from Rozklad r, Groups g, Vikladachi v, Predmeti p, Auditorii a WHERE r.Grupa=g.Kod and r.Vikladach=v.Number and r.Predmet=p.Kod and r.Auditoria=a.Kod ";
 
         PreparedStatement pstm = conn.prepareStatement(sql);
 
@@ -33,10 +33,10 @@ public class DBUtils {
             //int Kod = rs.getInt("Kod");
             String DayOfWeek = rs.getString("DayOfWeek");
             int Para = rs.getInt("Para");
-            int Grupa = rs.getInt("g.Nazva");
-            int Vikladach = rs.getInt("v.PIB");
-            int Predmet = rs.getInt("p.Nazva");
-            int Auditoria = rs.getInt("a.Nazva");
+            String Grupa = rs.getString("g.Nazva");
+            String Vikladach = rs.getString("v.PIB");
+            String Predmet = rs.getString("p.Nazva");
+            int Auditoria = rs.getInt("Auditoria");
             int Week = rs.getInt("Week");
 
             Rozklad rozklad = new Rozklad();

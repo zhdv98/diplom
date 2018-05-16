@@ -4,9 +4,9 @@ public class Rozklad {
     private int Kod;
     private String DayOfWeek;
     private int Para;
-    private int Grupa;
-    private int Vikladach;
-    private int Predmet;
+    private String Grupa;
+    private String Vikladach;
+    private String Predmet;
     private int Auditoria;
     private int Week;
 
@@ -26,37 +26,7 @@ public class Rozklad {
         DayOfWeek = dayOfWeek;
     }
 
-    public int getGrupa() {
-        return Grupa;
-    }
 
-    public void setGrupa(int grupa) {
-        Grupa = grupa;
-    }
-
-    public int getVikladach() {
-        return Vikladach;
-    }
-
-    public void setVikladach(int vikladach) {
-        Vikladach = vikladach;
-    }
-
-    public int getPredmet() {
-        return Predmet;
-    }
-
-    public void setPredmet(int predmet) {
-        Predmet = predmet;
-    }
-
-    public int getAuditoria() {
-        return Auditoria;
-    }
-
-    public void setAuditoria(int auditoria) {
-        Auditoria = auditoria;
-    }
 
     public int getWeek() {
         return Week;
@@ -72,5 +42,38 @@ public class Rozklad {
 
     public void setPara(int para) {
         Para = para;
+    }
+
+    public String getGrupa() {
+        return Grupa;
+    }
+
+    public void setGrupa(String grupa) {
+        Grupa = grupa;
+    }
+
+    public String getVikladach() {
+        return Vikladach;
+    }
+
+    public void setVikladach(String vikladach) {
+        Vikladach = vikladach;
+    }
+
+    public String getPredmet() {
+        return Predmet;
+    }
+
+    public void setPredmet(String predmet) {
+        Predmet = predmet;
+    }
+
+
+    public int getAuditoria() {
+        return Auditoria;
+    }
+
+    public void setAuditoria(int auditoria) {
+        Auditoria = auditoria;
     }
 }

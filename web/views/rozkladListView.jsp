@@ -28,7 +28,7 @@
 
 <table class="table table-hover">
     <tr>
-        <th>Код</th>
+
         <th>День тижня</th>
         <th>Пара</th>
         <th>Група</th>
@@ -40,7 +40,7 @@
     </tr>
     <c:forEach items="${rozkladList}" var="rozklad" >
         <tr>
-            <td>${rozklad.kod}</td>
+
             <td>${rozklad.dayOfWeek}</td>
             <td>${rozklad.para}</td>
             <td>${rozklad.grupa}</td>
