@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Dmitriy
+  Date: 5/15/2018
+  Time: 1:41 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -5,7 +12,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Розклад занять</title>
+    <title>Пошук</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
@@ -22,24 +29,25 @@
 <table class="table table-hover">
     <tr>
 
-        <th>DayOfWeek</th>
-        <th>Grupa</th>
-        <th>Vikladach</th>
-        <th>Predmet</th>
-        <th>Auditoria</th>
-        <th>Week</th>
-
+        <th>День тижня</th>
+        <th>Пара</th>
+        <th>Група</th>
+        <th>Викладач</th>
+        <th>Предмет</th>
+        <th>Аудиторія</th>
+        <th>Тиждень</th>
 
     </tr>
     <c:forEach items="${rozkladList}" var="rozklad" >
         <tr>
-            <td>${rozklad.DayOfWeek}</td>
-            <td>${rozklad.Grupa}</td>
-            <td>${rozklad.Vikladach}</td>
-            <td>${rozklad.Predmet}</td>
-            <td>${rozklad.Auditoria}</td>
-            <td>${rozklad.Week}</td>
 
+            <td>${rozklad.dayOfWeek}</td>
+            <td>${rozklad.para}</td>
+            <td>${rozklad.grupa}</td>
+            <td>${rozklad.vikladach}</td>
+            <td>${rozklad.predmet}</td>
+            <td>${rozklad.auditoria}</td>
+            <td>${rozklad.week}</td>
 
         </tr>
     </c:forEach>

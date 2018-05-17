@@ -13,12 +13,12 @@
 
 <jsp:include page="_header.jsp"></jsp:include>
 
-
+<form method="GET" action="${pageContext.request.contextPath}/searchRozklad">
 <h5 align="center" >Введіть групу для пошуку</h5>
-<h5 align="center"><input name="search" placeholder="П-652-42"></h5>
+<h5 align="center"><input name="search" placeholder="П-652-42" value="${rozklad.grupa}"></h5>
 <h5 align="center"><input type="submit" value="Знайти" ></h5>
  <br><br>
-
+</form>
 
 <jsp:include page="_footer.jsp"></jsp:include>
 

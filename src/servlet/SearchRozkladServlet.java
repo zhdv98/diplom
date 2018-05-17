@@ -26,24 +26,29 @@ public class SearchRozkladServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        Connection conn = MyUtils.getStoredConnection(request);
+            throws ServletException, IOException {Connection conn = MyUtils.getStoredConnection(request);
+
+        String Grupa = (String) request.getParameter("Grupa");
+        List<Rozklad> rozkl = null;
+        Rozklad rozklad = null;
 
         String errorString = null;
-        List<Rozklad> list = null;
+
         try {
-            list = DBUtils.queryRozklad(conn);
+            rozkl = DBUtils.findRozklad(conn, Grupa);
         } catch (SQLException e) {
             e.printStackTrace();
             errorString = e.getMessage();
         }
 
+
         request.setAttribute("errorString", errorString);
-        request.setAttribute("rozkladList", list);
+        request.setAttribute("rozkladList", rozkl);
 
         RequestDispatcher dispatcher = request.getServletContext()
-                .getRequestDispatcher("/WEB-INF/views/result_search.jsp");
+                .getRequestDispatcher("/views/rozkladListView.jsp");
         dispatcher.forward(request, response);
+
     }
 
     @Override
@@ -51,5 +56,4 @@ public class SearchRozkladServlet extends HttpServlet {
             throws ServletException, IOException {
         doGet(request, response);
     }
-
 }

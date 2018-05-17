@@ -10,6 +10,16 @@ public class Rozklad {
     private int Auditoria;
     private int Week;
 
+    public Rozklad( String dayOfWeek, int para, String grupa, String vikladach, String predmet, int auditoria, int week) {
+        this.DayOfWeek = dayOfWeek;
+        this.Para = para;
+        this.Grupa = grupa;
+        this.Vikladach = vikladach;
+        this.Predmet = predmet;
+        this.Auditoria = auditoria;
+        this.Week = week;
+    }
+
     public int getKod() {
         return Kod;
     }
