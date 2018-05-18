@@ -26,24 +26,35 @@ public class SearchRozkladServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {Connection conn = MyUtils.getStoredConnection(request);
+            throws ServletException, IOException {
 
-        String Grupa = (String) request.getParameter("Grupa");
-        List<Rozklad> rozkl = null;
-        Rozklad rozklad = null;
+        RequestDispatcher dispatcher = request.getServletContext()
+                .getRequestDispatcher("/views/rozkladListView.jsp");
+        dispatcher.forward(request, response);
+    }
+
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        Connection conn = MyUtils.getStoredConnection(request);
+
+
+        String Grupa = (String) request.getParameter("grupa");
+
 
         String errorString = null;
 
+        List<Rozklad> list = null;
         try {
-            rozkl = DBUtils.findRozklad(conn, Grupa);
+            list = DBUtils.findRozklad(conn, Grupa);
         } catch (SQLException e) {
             e.printStackTrace();
             errorString = e.getMessage();
         }
 
-
         request.setAttribute("errorString", errorString);
-        request.setAttribute("rozkladList", rozkl);
+        request.setAttribute("rozkladList", list);
 
         RequestDispatcher dispatcher = request.getServletContext()
                 .getRequestDispatcher("/views/rozkladListView.jsp");
@@ -51,9 +62,4 @@ public class SearchRozkladServlet extends HttpServlet {
 
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
-    }
 }

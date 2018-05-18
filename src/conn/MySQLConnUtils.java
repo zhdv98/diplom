@@ -10,8 +10,6 @@ public class MySQLConnUtils {
             throws ClassNotFoundException, SQLException {
         // Примечание: Изменить параметры соединения соответствующе.
 
-
-
         String hostName = "localhost";
         String dbName = "diplom";
         String userName = "admin";
@@ -25,9 +23,6 @@ public class MySQLConnUtils {
 
         Class.forName("com.mysql.jdbc.Driver");
 
-        // Структура URL Connection для MySQL:
-        // Например:
-        // jdbc:mysql://localhost:3306/simplehr
         String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
 
         Connection conn = DriverManager.getConnection(connectionURL, userName,
