@@ -41,9 +41,7 @@ public class SearchRozkladVikladachServlet extends HttpServlet {
             Connection conn = MyUtils.getStoredConnection(request);
 
            // request.setCharacterEncoding("Cp1251");
-            String Vikladach = (String) request.getParameter("vikladach");
-
-
+            String Vikladach =  (String) request.getParameter("vikladach");
             String errorString = null;
 
             List<Rozklad> list = null;

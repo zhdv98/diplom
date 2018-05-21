@@ -76,7 +76,6 @@ public class JDBCFilter implements Filter {
                 conn = ConnectionUtils.getConnection();
 
                 conn.setAutoCommit(false);
-
                 MyUtils.storeConnection(request, conn);
 
                 chain.doFilter(request, response);
