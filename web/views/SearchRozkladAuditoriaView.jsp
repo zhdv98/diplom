@@ -17,7 +17,7 @@
 
 <form method="POST" action="${pageContext.request.contextPath}/searchRozkladAuditoria">
     <h5 align="center" >Введіть номер аудиторії</h5>
-    <h5 align="center"><input type="text" name="auditoria"  value="${rozklad.auditoria}" placeholder="32" ></h5>
+    <h5 align="center"><input type="number" name="auditoria"  value="${rozklad.auditoria}" placeholder="32"></h5>
     <h5 align="center"><input type="submit" value="Знайти" ></h5>
     <br><br>
 </form>
