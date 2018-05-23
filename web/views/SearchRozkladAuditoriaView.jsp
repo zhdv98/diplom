@@ -13,6 +13,7 @@
 <body>
 
 <jsp:include page="_header.jsp"></jsp:include>
+<jsp:include page="_menu.jsp"></jsp:include>
 
 <form method="POST" action="${pageContext.request.contextPath}/searchRozkladAuditoria">
     <h5 align="center" >Введіть номер аудиторії</h5>

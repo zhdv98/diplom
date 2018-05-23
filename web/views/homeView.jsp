@@ -12,6 +12,7 @@
 <body>
 
 <jsp:include page="_header.jsp"></jsp:include>
+<jsp:include page="_menu.jsp"></jsp:include>
 
 <form method="POST" action="${pageContext.request.contextPath}/searchRozklad">
 <h5 align="center" >Введіть групу для пошуку</h5>

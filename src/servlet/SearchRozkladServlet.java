@@ -46,20 +46,44 @@ public class SearchRozkladServlet extends HttpServlet {
         String errorString = null;
 
         List<Rozklad> list = null;
-        try {
-            list = DBUtils.findRozklad(conn, Grupa);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            errorString = e.getMessage();
+        String regex = "\\w+";
+
+
+
+        if (errorString == null) {
+            try {
+
+                list = DBUtils.findRozklad(conn, Grupa);
+                if (list == null) errorString = "Такої групи не існує!";
+            }
+            catch (SQLException e) {
+
+
+                e.printStackTrace();
+                errorString = e.getMessage();
+
+            }
+
         }
+
 
         request.setAttribute("errorString", errorString);
         request.setAttribute("rozkladList", list);
 
-        RequestDispatcher dispatcher = request.getServletContext()
-                .getRequestDispatcher("/views/rozkladListView.jsp");
-        dispatcher.forward(request, response);
+        if (errorString != null) {
+            RequestDispatcher dispatcher = request.getServletContext()
+                    .getRequestDispatcher("/views/rozkladListView.jsp");
+            dispatcher.forward(request, response);
+        }
+        else {
+            RequestDispatcher dispatcher = request.getServletContext()
+                    .getRequestDispatcher("/views/rozkladListView.jsp");
+            dispatcher.forward(request, response);
+
+        }
+
 
     }
+
 
 }

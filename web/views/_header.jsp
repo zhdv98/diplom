@@ -11,14 +11,12 @@
 
 
         <div id="header" class="clear">
-            <!-- <div class="fl_left"> -->
             <h1><a href="http://ccte.nau.edu.ua/"> <img src="http://ccte.nau.edu.ua/images/log.png" width="100" height="80" align="right" vspace="1" hspace="1"> <img src="http://ccte.nau.edu.ua/images/logo.png" width="100" height="80" align="left" vspace="5" hspace="5"> Київський коледж комп`ютерних технологій та економіки НАУ</a></h1>
 
             </div>
     </div>
 
-    <div style="float: right; padding: 10px; text-align: center;">
-
+    <div style="float: top; padding: 10px; text-align: center;">
 
         </b>
         <br/>
