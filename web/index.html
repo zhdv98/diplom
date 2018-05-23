@@ -4,53 +4,62 @@
     <meta charset="UTF-8">
     <title>ККТЕ НАУ</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
+
+
+
 </head>
 
 <body>
-<div style="background: #00008B; height: 100px; padding: 0px;">
-    <div style="float: left">
+
+<ul>
 
 
-        <div id="header" class="clear">
-            <!-- <div class="fl_left"> -->
-            <h1><a href="http://ccte.nau.edu.ua/"> <img src="http://ccte.nau.edu.ua/images/log.png" width="100" height="80" align="right" vspace="1" hspace="1"> <img src="http://ccte.nau.edu.ua/images/logo.png" width="100" height="80" align="left" vspace="5" hspace="5"> Київський коледж комп`ютерних технологій та економіки НАУ</a></h1>
+</ul>
+<div class="wrapper row1">
+    <div id="header" class="clear">
+        <!-- <div class="fl_left"> -->
+        <h1><a href="http://ccte.nau.edu.ua/"> <img src="http://ccte.nau.edu.ua/images/log.png" width="130" height="100"
+                                       align="right"
+                                       vspace="1" hspace="1"> <img src="http://ccte.nau.edu.ua/images/logo.png" width="130" height="100"
+                                                                   align="left"
+                                                                   vspace="5" hspace="5"> Київський коледж комп`ютерних технологій та економіки</a></h1>
+        <p>Національного авіаційного університету</p>
+    </div>
 
+    <!-- ####################################################################################################### -->
+    <div class="wrapper row2">
+        <div id="topnav">
+            <ul>
+
+
+                <ul><a href="home"><button type="button" class="btn btn-link" >Пошук за номером групи</button></a>
+                    <a href="rozkladVikladach"><button type="button" class="btn btn-link" >Пошук за викладачем</button></a>
+                    <a href="rozkladAuditoria"><button type="button" class="btn btn-link" >Пошук за номером аудиторії</button></a>
+                    <a href="rozkladList"><button type="button" class="btn btn-link" >Перегляд всього розкладу</button></a>
+                </ul></ul>
+                <div  class="clear"></div>
         </div>
     </div>
 
-    <div style="float: right; padding: 10px; text-align: center;">
-
-        </b>
-        <br/>
+    <div class="wrapper row3">
+        <div id="featured_slide">
+            <dl class="slidedeck">
+                <dt>Головний вхід</dt>
+                <dd>  <div id="featured_slide1">
+                    <div class="featured_box"><a href="#"><img src="http://ccte.nau.edu.ua/images/demo/featured-slide/pic3.jpg" width="735" height="465" alt="" /></a>          </div>
+                </div>
+                </dd>
+            </dl>
+                </div>
+                </dd>
 
     </div>
+    </div>
 
-</div>
-<h2>Головна сторінка</h2>
-
-
-<ul>
-    <a href="home"><button type="button" class="btn btn-link" >Пошук за номером групи</button></a>
-    <a href="rozkladVikladach"><button type="button" class="btn btn-link" >Пошук за викладачем</button></a>
-    <a href="rozkladAuditoria"><button type="button" class="btn btn-link" >Пошук за номером аудиторії</button></a>
-    <a href="rozkladList"><button type="button" class="btn btn-link" >Перегляд всього розкладу</button></a>
-
-</ul>
-<h3> Основне завдання даного проекту полягає в створенні демонстраційної програми для відображення розкладу занять для групи, викладача, аудиторії. Візуалізація розкладу повинна проводитись у вигляді веб-орієнтованого застосування, яке використовує базу даних формату MySQL.</h3>
-    <h3>База даних заповнюється модулем, який працює локально на комп’ютері працівника навчальної частини, а база даних розташована віддалено на сервері навчального закладу.</h3>
-        <h3> В програмі повинно бути передбачено перегляд розкладу занять повністю, пошук розкладу занять за назвою групи, пошук розкладу занять за ПІБ викладача, а також навантаження аудиторії.</h3>
-            <h3>Доступ до бази даних розкладу занять доступно для всіх категорій користувачів, оскільки не передбачає зміну даних, але перегляд навантаження аудиторій головним чином призначено для завідувачів лабораторій та керівників лабораторного та навчального корпусів.</h3>
-                <h3>Головною умовою роботи веб-орієнтованої системи перегляду розкладу занять є наявність підключення до мережі інтернет.</h3>
-                    <h3>На вхід до системи потрапляє доступна інформація від користувача: шифр групи для відображення розкладу на тиждень для групи, ПІБ викладача для відображення розкладу на тиждень для викладача, номер аудиторії для відображення навантаження на тиждень.</h3>
-                        <h3>На виході маємо результати пошуку за введеними критеріями у вигляді таблиці, кожен рядок якої містить інформацію про предмет, викладача, групу, аудиторію, пару, тиждень. Вертикальні рядки визначають дні тижня. Якщо введено не вірні дані, то виводиться повідомлення про відсутність запрошених даних.</h3>
-                            <h3>Користувачі системи: робітники навчального закладу або диспетчерська служба, студенти, викладачі, завідувачі лабораторій.
-</h3>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
 </body>
-<div
-        style="background: #00008B; text-align: center; padding: 5px; margin-top: 10px;">
 
-</div>
 </html>

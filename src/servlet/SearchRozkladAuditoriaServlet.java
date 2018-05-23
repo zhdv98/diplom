@@ -48,7 +48,9 @@ public class SearchRozkladAuditoriaServlet extends HttpServlet{
             try {
 
                 list = DBUtils.findRozkladAuditoria(conn, awesomeParsedInteger);
+                if (list.isEmpty())
                 errorString = "Аудиторії " + Auditoria + " не існує!";
+
             } catch (SQLException e) {
                 e.printStackTrace();
                 errorString = e.getMessage();
