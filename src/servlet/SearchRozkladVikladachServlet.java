@@ -40,25 +40,34 @@ public class SearchRozkladVikladachServlet extends HttpServlet {
                 throws ServletException, IOException {
             Connection conn = MyUtils.getStoredConnection(request);
 
-           // request.setCharacterEncoding("Cp1251");
             String Vikladach =  (String) request.getParameter("vikladach");
             String errorString = null;
 
             List<Rozklad> list = null;
-            try {
-
-                list = DBUtils.findRozkladVikladach(conn, Vikladach);
-            } catch (SQLException e) {
-                e.printStackTrace();
-                errorString = e.getMessage();
+            if (errorString == null) {
+                try {
+                    list = DBUtils.findRozkladVikladach(conn, Vikladach);
+                    if (list.isEmpty())
+                        errorString = "Викладача " + Vikladach + " не існує!";
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    errorString = e.getMessage();
+                }
             }
-
             request.setAttribute("errorString", errorString);
             request.setAttribute("rozkladList", list);
 
-            RequestDispatcher dispatcher = request.getServletContext()
-                    .getRequestDispatcher("/views/rozkladListView.jsp");
-            dispatcher.forward(request, response);
+            if (errorString != null) {
+                RequestDispatcher dispatcher = request.getServletContext()
+                        .getRequestDispatcher("/views/rozkladListView.jsp");
+                dispatcher.forward(request, response);
+            }
+            else {
+                RequestDispatcher dispatcher = request.getServletContext()
+                        .getRequestDispatcher("/views/rozkladListView.jsp");
+                dispatcher.forward(request, response);
+            }
+
 
         }
 

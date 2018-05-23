@@ -90,6 +90,7 @@ public class DBUtils {
 
             list.add(rozklad);
             System.out.println(list);
+
         }
         pstm.close();
         return list;

@@ -89,11 +89,9 @@ public class JDBCFilter implements Filter {
                 ConnectionUtils.closeQuietly(conn);
             }
         }
-        // Для обычных request (image,css,html,..)
-        // не нужно открывать connection.
+
         else {
-            // Разрешить request продвигаться далее.
-            // (Далее к следующему Filter tiếp или к цели).
+
             chain.doFilter(request, response);
         }
 

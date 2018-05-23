@@ -39,22 +39,18 @@ public class SearchRozkladServlet extends HttpServlet {
             throws ServletException, IOException {
         Connection conn = MyUtils.getStoredConnection(request);
 
-
         String Grupa = (String) request.getParameter("grupa");
-
 
         String errorString = null;
 
         List<Rozklad> list = null;
-        String regex = "\\w+";
-
-
 
         if (errorString == null) {
             try {
 
                 list = DBUtils.findRozklad(conn, Grupa);
-                if (list == null) errorString = "Такої групи не існує!";
+                if (list.isEmpty() )
+                    errorString = "Групи " + Grupa + " не існує!";
             }
             catch (SQLException e) {
 
@@ -65,7 +61,6 @@ public class SearchRozkladServlet extends HttpServlet {
             }
 
         }
-
 
         request.setAttribute("errorString", errorString);
         request.setAttribute("rozkladList", list);
@@ -79,7 +74,6 @@ public class SearchRozkladServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getServletContext()
                     .getRequestDispatcher("/views/rozkladListView.jsp");
             dispatcher.forward(request, response);
-
         }
 
 

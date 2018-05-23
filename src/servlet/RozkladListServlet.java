@@ -33,15 +33,15 @@ public class RozkladListServlet extends HttpServlet{
         List<Rozklad> list = null;
         try {
             list = DBUtils.queryRozklad(conn);
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             e.printStackTrace();
             errorString = e.getMessage();
         }
-        // Сохранить информацию в request attribute перед тем как forward к views.
         request.setAttribute("errorString", errorString);
         request.setAttribute("rozkladList", list);
 
-        // Forward к /WEB-INF/views/productListView.jsp
         RequestDispatcher dispatcher = request.getServletContext()
                 .getRequestDispatcher("/views/rozkladListView.jsp");
         dispatcher.forward(request, response);

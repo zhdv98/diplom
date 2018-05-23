@@ -22,8 +22,6 @@ public class RozkladAuditoriaServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
-
         RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/views/SearchRozkladAuditoriaView.jsp");
 
         dispatcher.forward(request, response);

@@ -1,6 +1,5 @@
 package servlet;
 
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -40,26 +39,34 @@ public class SearchRozkladAuditoriaServlet extends HttpServlet{
             throws ServletException, IOException {
         Connection conn = MyUtils.getStoredConnection(request);
 
-        // request.setCharacterEncoding("Cp1251");
         String Auditoria = (String) request.getParameter("auditoria");
         int awesomeParsedInteger  = Integer.parseInt(Auditoria);
         String errorString = null;
 
         List<Rozklad> list = null;
-        try {
+        if (errorString == null) {
+            try {
 
-            list = DBUtils.findRozkladAuditoria(conn, awesomeParsedInteger );
-        } catch (SQLException e) {
-            e.printStackTrace();
-            errorString = e.getMessage();
+                list = DBUtils.findRozkladAuditoria(conn, awesomeParsedInteger);
+                errorString = "Аудиторії " + Auditoria + " не існує!";
+            } catch (SQLException e) {
+                e.printStackTrace();
+                errorString = e.getMessage();
+            }
         }
-
         request.setAttribute("errorString", errorString);
         request.setAttribute("rozkladList", list);
 
-        RequestDispatcher dispatcher = request.getServletContext()
-                .getRequestDispatcher("/views/rozkladListView.jsp");
-        dispatcher.forward(request, response);
+        if (errorString != null) {
+            RequestDispatcher dispatcher = request.getServletContext()
+                    .getRequestDispatcher("/views/rozkladListView.jsp");
+            dispatcher.forward(request, response);
+        }
+        else {
+            RequestDispatcher dispatcher = request.getServletContext()
+                    .getRequestDispatcher("/views/rozkladListView.jsp");
+            dispatcher.forward(request, response);
+        }
 
     }
 

@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
 
-    <a href="home"><button type="button" class="btn btn-link" >Пошук</button></a>
+    <a href="home"><button type="button" class="btn btn-link" >Пошук за номером групи</button></a>
     <a href="rozkladVikladach"><button type="button" class="btn btn-link" >Пошук за викладачем</button></a>
     <a href="rozkladAuditoria"><button type="button" class="btn btn-link" >Пошук за номером аудиторії</button></a>
     <a href="rozkladList"><button type="button" class="btn btn-link" >Перегляд всього розкладу</button></a>
